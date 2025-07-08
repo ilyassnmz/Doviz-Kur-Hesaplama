@@ -5,6 +5,7 @@ const equal = document.getElementById('equal');
 const exchangeRate = document.getElementById('exchangeRate');
 const lastUpdate = document.getElementById('lastUpdate');
 
+
 async function updateRate() {
     exchangeRate.textContent = "Yükleniyor...";
     equal.textContent = "-";
@@ -30,11 +31,14 @@ async function updateRate() {
         lastUpdate.textContent = "";
         equal.textContent = "-";
         console.error(err);
+    
     }
 }
+
 
 currencyFirst.addEventListener('change', updateRate);
 currencySecond.addEventListener('change', updateRate);
 count.addEventListener('input', updateRate);
 
 updateRate();
+
